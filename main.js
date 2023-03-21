@@ -403,3 +403,128 @@ window.addEventListener("scroll", () => {
 });
 
 //YouMayLike
+let likeArr = [
+  {
+    img: "/img/latest5.jpg.webp",
+    title: "Cashmere Tank + Bag",
+    price_new: "$68.00",
+    price_old: "$80.00",
+    category: "Men",
+  },
+  {
+    img: "/img/latest6.jpg.webp",
+    title: "Cashmere Tank + Bag",
+    price_new: "$47.00",
+    price_old: "$60.00",
+    category: "Men",
+  },
+  {
+    img: "/img/latest7.jpg.webp",
+    title: "Cashmere Tank + Bag",
+    price_new: "$39.00",
+    price_old: "$50.00",
+    category: "Men",
+  },
+  {
+    img: "/img/latest8.jpg.webp",
+    title: "Cashmere Tank + Bag",
+    price_new: "$56.00",
+    price_old: "$70.00",
+    category: "Men",
+  },
+  {
+    img: "/img/latest5.jpg.webp",
+    title: "Cashmere Tank + Bag",
+    price_new: "$23.00",
+    price_old: "$40.00",
+    category: "Men",
+  },
+  {
+    img: "/img/latest6.jpg.webp",
+    title: "Cashmere Tank + Bag",
+    price_new: "$78.00",
+    price_old: "$90.00",
+    category: "Men",
+  },
+];
+let like_slideArr = [...likeArr];
+
+let like_nav_left = document.querySelector(".like_nav_left");
+let like_nav_right = document.querySelector(".like_nav_right");
+let like_box = document.querySelectorAll(".like_box");
+let like_slider = document.querySelector(".like_slider");
+
+window.addEventListener("DOMContentLoaded", () => {
+  likeBoxSlide();
+});
+
+like_nav_left.addEventListener("click", () => {
+  let saveFirst = like_slideArr[like_slideArr.length - 1];
+  like_slideArr = like_slideArr.map((item, i) => (item = like_slideArr[i - 1]));
+  like_slideArr[0] = saveFirst;
+  likeBoxSlide();
+});
+
+like_nav_right.addEventListener("click", () => {
+  let saveLast = like_slideArr[0];
+  like_slideArr = like_slideArr.map((item, i) => (item = like_slideArr[i + 1]));
+  like_slideArr[like_slideArr.length - 1] = saveLast;
+
+  likeBoxSlide();
+});
+
+function likeBoxSlide() {
+  setTimeout(() => {
+    like_box.forEach((box, i) => {
+      let img = like_slideArr[i].img;
+      let title = like_slideArr[i].title;
+      let price_new = like_slideArr[i].price_new;
+      let price_old = like_slideArr[i].price_old;
+
+      box.innerHTML = `
+    <div class="like_box_img">
+      <img src="${img}" alt="" />
+      <div class="like_box_buttons">
+        <div class="trend_button_one like_button">
+          <i class="fa-solid fa-cart-plus"></i>
+        </div>
+        <div class="trend_button_two like_button">
+          <i class="fa-regular fa-heart"></i>
+        </div>
+        <div class="trend_button_three like_button">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="trend_box_info">
+      <h3>${title}</h3>
+      <div class="trend_info_price">
+        <p>${price_new}</p>
+        <span>${price_old}</span>
+      </div>
+    </div>`;
+    });
+    likeAdd();
+  }, 200);
+
+  like_slider.classList.remove("animate__fadeIn");
+  setTimeout(() => {
+    like_slider.classList.add("animate__fadeIn");
+  }, 100);
+}
+
+function likeAdd() {
+  like_box.forEach((box) => {
+    let add_btn = box.querySelector(".trend_button_one");
+    add_btn.addEventListener("click", () => {
+      let box_name = box.querySelector("h3").innerHTML;
+      let box_price = box.querySelector("p").innerHTML;
+      console.log(box_name, box_price); //
+
+      add_counter.style.opacity = "1";
+      add_count++;
+      add_counter.innerHTML = add_count;
+    });
+  });
+}
