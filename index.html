@@ -4,10 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FE FINAL</title>
+    <title>FE Final</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="/img/loder.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
   </head>
+
   <body>
     <header>
       <!-- header_top -->
@@ -110,23 +115,105 @@
     </header>
     <main>
       <!-- slider -->
+      <div class="discount_info">
+        <p>Sale Up To 50% Biggest Discounts. Hurry! Limited Perriod Offer</p>
+        <a href="#">Shop Now</a>
+      </div>
       <section class="slider">
         <div class="slider_img">
-          <div class="imgnav"><i class="fa-solid fa-chevron-left"></i></div>
+          <div class="imgnav imgnav_left">
+            <i class="fa-solid fa-chevron-left"></i>
+          </div>
           <div class="slider_text_area">
             <div class="slider_box">
               <h3>Fashion Sale</h3>
-              <h1>Minimal Menz Style</h1>
-              <p>
+              <h1 class="animate__animated animate__bounceIn">
+                Minimal Menz Style
+              </h1>
+              <p class="animate__animated animate__fadeInUp">
                 Consectetur adipisicing elit. Laborum fuga incidunt laboriosam
                 voluptas iure, delectus dignissimos facilis neque nulla earum.
               </p>
-              <button><a href="#">SHOP NOW</a></button>
+              <button class="animate__animated animate__fadeInUp">
+                <a href="#">SHOP NOW</a>
+              </button>
             </div>
           </div>
-          <div class="imgnav"><i class="fa-solid fa-chevron-right"></i></div>
+          <div class="imgnav imgnav_right">
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
         </div>
       </section>
+
+      <!-- fashion_type -->
+      <div class="container">
+        <section class="fashion_type">
+          <div class="fashion_type_box">
+            <div class="fashion_type_img">
+              <img src="/img/items1.jpg.webp" alt="" />
+              <div class="fashion_type_filtr"></div>
+              <div class="fashion_type_info">
+                <h4><a href="#">Men's Fashion</a></h4>
+                <a href="#" class="fashion_type_link">Shop Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="fashion_type_box">
+            <div class="fashion_type_img">
+              <img src="/img/items2.jpg.webp" alt="" />
+              <div class="fashion_type_filtr"></div>
+              <div class="fashion_type_info">
+                <h4><a href="#">Women's Fashion</a></h4>
+                <a href="#" class="fashion_type_link">Shop Now</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="fashion_type_box">
+            <div class="fashion_type_img">
+              <img src="/img/items3.jpg.webp" alt="" />
+              <div class="fashion_type_filtr"></div>
+              <div class="fashion_type_info">
+                <h4><a href="#">Baby Fashion</a></h4>
+                <a href="#" class="fashion_type_link">Shop Now</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- trending -->
+        <section class="trending">
+          <div class="trending_top">
+            <h2>Trending This Week</h2>
+            <div class="trending_top_filtr">
+              <h4>All</h4>
+              <h4>Men</h4>
+              <h4>Women</h4>
+              <h4>Baby</h4>
+            </div>
+          </div>
+          <div class="trend_content">
+            <div class="trend_slider_nav trend_slider_nav_left">
+              <i class="fa-solid fa-chevron-left"></i>
+            </div>
+
+            <div class="trend_slider">
+              <div class="trend_box trend_box_one"></div>
+
+              <div class="trend_box trend_box_two"></div>
+
+              <div class="trend_box trend_box_three"></div>
+
+              <div class="trend_box trend_box_four"></div>
+            </div>
+
+            <div class="trend_slider_nav trend_nav_right">
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
     <script
       src="https://kit.fontawesome.com/da35fc8e81.js"
