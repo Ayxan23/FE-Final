@@ -115,85 +115,85 @@ let trendArr = [
   {
     img: "/img/latest1.jpg.webp",
     title: "Cashmere Tank + Men",
-    price_new: "$98.00",
-    price_old: "$120.00",
+    price_new: "$68.00",
+    price_old: "$80.00",
     category: "Men",
   },
   {
     img: "/img/latest2.jpg.webp",
     title: "Cashmere Tank + Women",
-    price_new: "$98.00",
-    price_old: "$120.00",
+    price_new: "$47.00",
+    price_old: "$60.00",
     category: "Women",
   },
   {
     img: "/img/latest3.jpg.webp",
     title: "Cashmere Tank + Baby",
-    price_new: "$98.00",
-    price_old: "$120.00",
+    price_new: "$39.00",
+    price_old: "$50.00",
     category: "Baby",
   },
   {
     img: "/img/latest4.jpg.webp",
     title: "Cashmere Tank + Men",
-    price_new: "$98.00",
-    price_old: "$120.00",
+    price_new: "$56.00",
+    price_old: "$70.00",
     category: "Men",
-  }, // trend slider
+  },
   {
     img: "/img/latest2.jpg.webp",
     title: "Cashmere Tank + Men",
-    price_new: "$98.00",
-    price_old: "$120.00",
+    price_new: "$23.00",
+    price_old: "$40.00",
     category: "Men",
   },
   {
     img: "/img/latest3.jpg.webp",
     title: "Cashmere Tank + Women",
-    price_new: "$98.00",
-    price_old: "$120.00",
+    price_new: "$78.00",
+    price_old: "$90.00",
     category: "Women",
   },
   {
     img: "/img/latest1.jpg.webp",
     title: "Cashmere Tank + Baby",
-    price_new: "$98.00",
-    price_old: "$120.00",
+    price_new: "$45.00",
+    price_old: "$60.00",
     category: "Baby",
   },
   {
     img: "/img/latest4.jpg.webp",
     title: "Cashmere Tank + Women",
-    price_new: "$98.00",
-    price_old: "$120.00",
+    price_new: "$91.00",
+    price_old: "$110.00",
     category: "Women",
   },
   {
     img: "/img/latest3.jpg.webp",
     title: "Cashmere Tank + Men",
-    price_new: "$98.00",
-    price_old: "$120.00",
+    price_new: "$55.00",
+    price_old: "$60.00",
     category: "Men",
   },
   {
     img: "/img/latest2.jpg.webp",
     title: "Cashmere Tank + Baby",
-    price_new: "$98.00",
-    price_old: "$120.00",
+    price_new: "$72.00",
+    price_old: "$80.00",
     category: "Baby",
   },
   {
     img: "/img/latest1.jpg.webp",
     title: "Cashmere Tank + Women",
-    price_new: "$98.00",
-    price_old: "$120.00",
+    price_new: "$81.00",
+    price_old: "$90.00",
     category: "Women",
   },
   {
     img: "/img/latest4.jpg.webp",
     title: "Cashmere Tank + Baby",
-    price_new: "$98.00",
-    price_old: "$120.00",
+    price_new: "$44.00",
+    price_old: "$60.00",
     category: "Baby",
   },
 ];
@@ -203,13 +203,13 @@ let trend_nav_left = document.querySelector(".trend_slider_nav_left");
 let trend_nav_right = document.querySelector(".trend_nav_right");
 let trend_box = document.querySelectorAll(".trend_box");
 
+let trend_slider = document.querySelector(".trend_slider");
+
 window.addEventListener("DOMContentLoaded", () => {
   trendBoxSlide();
   filtr_btns[0].style.color = "var(--bs-red)";
   filtr_btns[0].style.borderBottom = "4px solid var(--bs-red)";
 });
-
-let trend_index = 0;
 
 trend_nav_left.addEventListener("click", () => {
   let saveFirst = trend_slideArr[trend_slideArr.length - 1];
@@ -217,7 +217,6 @@ trend_nav_left.addEventListener("click", () => {
     (item, i) => (item = trend_slideArr[i - 1])
   );
   trend_slideArr[0] = saveFirst;
-
   trendBoxSlide();
 });
 
@@ -232,37 +231,44 @@ trend_nav_right.addEventListener("click", () => {
 });
 
 function trendBoxSlide() {
-  trend_box.forEach((box, i) => {
-    let img = trend_slideArr[i].img;
-    let title = trend_slideArr[i].title;
-    let price_new = trend_slideArr[i].price_new;
-    let price_old = trend_slideArr[i].price_old;
+  setTimeout(() => {
+    trend_box.forEach((box, i) => {
+      let img = trend_slideArr[i].img;
+      let title = trend_slideArr[i].title;
+      let price_new = trend_slideArr[i].price_new;
+      let price_old = trend_slideArr[i].price_old;
 
-    box.innerHTML = `<div class="trend_box_img">
-    <img src="${img}" alt="" />
-    <div class="trend_box_buttons">
-      <a href="#"
-        ><div class="trend_button_one trend_button">
-          <i class="fa-solid fa-cart-plus"></i></div
-      ></a>
-      <a href="#"
-        ><div class="trend_button_two trend_button">
-          <i class="fa-regular fa-heart"></i></div
-      ></a>
-      <a href="#"
-        ><div class="trend_button_three trend_button">
-          <i class="fa-solid fa-magnifying-glass"></i></div
-      ></a>
+      box.innerHTML = `
+    <div class="trend_box_img">
+      <img src="${img}" alt="" />
+      <div class="trend_box_buttons">
+        <div class="trend_button_one trend_button">
+          <i class="fa-solid fa-cart-plus"></i>
+        </div>
+        <div class="trend_button_two trend_button">
+          <i class="fa-regular fa-heart"></i>
+        </div>
+        <div class="trend_button_three trend_button">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="trend_box_info">
-    <h3><a href="#">${title}</a></h3>
-    <div class="trend_info_price">
-      <p>${price_new}</p>
-      <span>${price_old}</span>
-    </div>
-  </div>`;
-  });
+
+    <div class="trend_box_info">
+      <h3>${title}</h3>
+      <div class="trend_info_price">
+        <p>${price_new}</p>
+        <span>${price_old}</span>
+      </div>
+    </div>`;
+    });
+    trendAdd();
+  }, 200);
+
+  trend_slider.classList.remove("animate__fadeIn");
+  setTimeout(() => {
+    trend_slider.classList.add("animate__fadeIn");
+  }, 100);
 }
 
 // trend filter
@@ -287,3 +293,113 @@ filtr_btns.forEach((filtr_btn) => {
     trendBoxSlide();
   });
 });
+
+// trend add
+let add_counter = document.querySelector(".cart_shop_count");
+let add_count = 0;
+
+function trendAdd() {
+  trend_box.forEach((box) => {
+    let add_btn = box.querySelector(".trend_button_one");
+    add_btn.addEventListener("click", () => {
+      let box_name = box.querySelector("h3").innerHTML;
+      let box_price = box.querySelector("p").innerHTML;
+      console.log(box_name, box_price); //
+
+      add_counter.style.opacity = "1";
+      add_count++;
+      add_counter.innerHTML = add_count;
+    });
+  });
+}
+//to be continued...
+
+// customer testimonial
+let custTestArr = [
+  {
+    text: "Everybody is different, which is why we offer styles for every body. Laborum fuga incidunt laboriosam voluptas iure, delectus dignissimos facilis neque nulla earum.",
+    custName: "Petey Cruiser",
+    custJob: "Designer at Colarlib",
+    img: "/img/founder-img.png.webp",
+  },
+  {
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae totam animi, laboriosam minima tenetur deleniti optio aperiam maxime at iure esse molestias mollitia.",
+    custName: "Ayxan Mustafayev",
+    custJob: "Developer",
+    img: "/img/custAyxan.png",
+  },
+];
+
+let cust_nav_left = document.querySelector(".testimonial_nav_left");
+let cust_nav_right = document.querySelector(".testimonial_nav_right");
+
+let cust_box = document.querySelector(".testimonial_box_info");
+
+let cust_index = 0;
+
+cust_nav_right.addEventListener("click", () => {
+  custTestArr.length - 1 == cust_index ? (cust_index = 0) : ++cust_index;
+  cust_box.classList.remove("animate__slideInLeft");
+  cust_box.classList.remove("animate__slideOutRight");
+
+  setTimeout(() => {
+    cust_box.classList.remove("animate__slideInRight");
+    cust_box.classList.add("animate__slideOutLeft");
+  }, 200);
+  setTimeout(() => {
+    slideCustTestmin();
+    cust_box.classList.remove("animate__slideOutLeft");
+    cust_box.classList.add("animate__slideInRight");
+  }, 700);
+});
+
+cust_nav_left.addEventListener("click", () => {
+  cust_index == 0 ? (cust_index = custTestArr.length - 1) : --cust_index;
+  cust_box.classList.remove("animate__slideOutLeft");
+  cust_box.classList.remove("animate__slideInRight");
+
+  setTimeout(() => {
+    cust_box.classList.remove("animate__slideInLeft");
+    cust_box.classList.add("animate__slideOutRight");
+  }, 200);
+  setTimeout(() => {
+    slideCustTestmin();
+    cust_box.classList.remove("animate__slideOutRight");
+    cust_box.classList.add("animate__slideInLeft");
+  }, 700);
+});
+
+function slideCustTestmin() {
+  cust_box.innerHTML = `
+  <h2>Customer Testimonial</h2>
+  <p class="testimonial_box_info_p">${custTestArr[cust_index].text}</p>
+  <div class="testimonial_info_customer">
+    <div class="testimonial_customer_img">
+      <img src="${custTestArr[cust_index].img}" alt="" />
+    </div>
+    <div>
+      <span>${custTestArr[cust_index].custName}</span>
+      <p>${custTestArr[cust_index].custJob}</p>
+    </div>
+  </div>`;
+}
+
+// topScroll button
+let top_scroll_btn = document.querySelector(".top_scroll");
+
+top_scroll_btn.addEventListener("click", () => {
+  $("html, body").animate({ scrollTop: "0" });
+});
+
+window.addEventListener("scroll", () => {
+  if (
+    document.body.scrollTop > 200 ||
+    document.documentElement.scrollTop > 200
+  ) {
+    top_scroll_btn.style.display = "flex";
+  } else {
+    top_scroll_btn.style.display = "none";
+  }
+});
+
+//YouMayLike
