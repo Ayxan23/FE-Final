@@ -48,3 +48,12 @@ let nav_img = document.querySelector(".nav_img");
 nav_img.addEventListener("click", () => {
   window.location.href = "/html/home.html";
 });
+
+//footer
+let footer_email = document.querySelector(".email_contact_text");
+let footer_input = footer_email.querySelector("input");
+let footer_button = footer_email.querySelector("button");
+
+footer_button.addEventListener("click", () => {
+  footer_input.value = "";
+});

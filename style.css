@@ -120,7 +120,6 @@ li {
     display: none;
   }
 }
-/* header_top end*/
 
 /* navbar */
 header {
@@ -309,7 +308,6 @@ header {
 .dsp_block {
   display: block;
 }
-/* navbar end*/
 
 /* slider */
 .discount_info {
@@ -466,7 +464,6 @@ header {
     padding: 0px;
   }
 }
-/* slider end */
 
 /* fashion_type */
 .fashion_type {
@@ -1525,9 +1522,9 @@ footer {
 .login_box_inputs input {
   font-family: "Poppins", sans-serif;
   outline: none;
-  border: 1px solid #c9c9c9;
+  border: 2px solid #e2e2e2;
   padding: 14px 18px;
-  font-size: 12px;
+  font-size: 14px;
   width: 100%;
   margin-bottom: 25px;
 }
@@ -1551,6 +1548,7 @@ footer {
 
 .login_inputs_bottom div {
   display: flex;
+  align-items: center;
   gap: 8px;
 }
 
@@ -1628,4 +1626,9 @@ footer {
   .login_box_inputs {
     padding: 15px 0px;
   }
+}
+#login_check {
+  accent-color: var(--bs-red);
+  width: 18px;
+  height: 18px;
 }

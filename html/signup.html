@@ -13,17 +13,24 @@
       <section class="login">
         <div class="login_box">
           <h2>Sign Up</h2>
-          <p>Create your account to get full access</p>
+          <p class="login_box_p">Create your account to get full access</p>
 
           <div class="login_box_inputs">
             <label for="signup_name">Full name</label>
-            <input type="text" id="signup_name" placeholder="Enter full name" />
+            <input
+              type="text"
+              id="signup_name"
+              placeholder="Enter full name"
+              value=""
+            />
 
             <label for="signup_mail">Email Address</label>
             <input
               type="email"
               id="signup_mail"
               placeholder="Enter email address"
+              value=""
+              required
             />
 
             <label for="signup_pass">Password</label>
@@ -31,13 +38,15 @@
               type="password"
               id="signup_pass"
               placeholder="Enter Password"
+              value=""
             />
 
             <label for="signup_conf_pass">Confirm Password</label>
             <input
               type="password"
-              id="login_pass"
+              id="signup_conf_pass"
               placeholder="Confirm Password"
+              value=""
             />
           </div>
 
@@ -45,7 +54,7 @@
             <p>
               Already have an account? <a href="/html/login.html">Login</a> here
             </p>
-            <button>Sign Up</button>
+            <button class="contact_button">Sign Up</button>
           </div>
         </div>
       </section>
@@ -54,5 +63,6 @@
       src="https://kit.fontawesome.com/da35fc8e81.js"
       crossorigin="anonymous"
     ></script>
+    <script src="/js/account.js"></script>
   </body>
 </html>
