@@ -51,6 +51,15 @@ li {
   --bs-dark: #212529;
 }
 
+::selection {
+  background-color: var(--bs-red);
+  color: white;
+}
+
+.select_nav {
+  color: var(--bs-red);
+}
+
 /* header_top */
 .header_top {
   border-bottom: 1px solid #edeff2;
@@ -395,6 +404,7 @@ header {
 }
 
 .slider_box button {
+  font-family: "Poppins", sans-serif;
   margin-top: 30px;
   padding: 15px 50px;
   border: none;
@@ -1139,6 +1149,7 @@ footer {
 }
 
 .email_contact_text input {
+  font-family: "Poppins", sans-serif;
   width: 390px;
   padding: 20px 24px;
   font-size: 15px;
@@ -1151,6 +1162,7 @@ footer {
 }
 
 .email_contact_text button {
+  font-family: "Poppins", sans-serif;
   font-size: 15px;
   font-weight: 500;
   color: white;
@@ -1284,4 +1296,336 @@ footer {
 .footer_last span {
   color: var(--bs-red);
   white-space: nowrap;
+  user-select: none;
+  cursor: none;
+}
+
+/* contact */
+.contact_title_box h2 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--bs-dark);
+  margin-bottom: 12px;
+}
+.contact_title {
+  background-color: #f3ead8;
+  margin-bottom: 50px;
+}
+
+.contact_title_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 0px;
+}
+
+.contact_title_nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #74706b;
+  font-size: 13px;
+}
+
+.contact_line {
+  width: 1px;
+  height: 12px;
+  background-color: #74706b;
+  margin: 0px 8px;
+}
+
+@media screen and (max-width: 575px) {
+  .contact_title_box h2 {
+    font-size: 30px;
+  }
+}
+
+/* contact location */
+.contact_location {
+  margin-bottom: 70px;
+}
+
+/* contact last */
+.contact_last {
+  margin-bottom: 70px;
+}
+
+.contact_last h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--bs-dark);
+  margin-bottom: 20px;
+}
+
+.contact_last_box input {
+  font-family: "Poppins", sans-serif;
+  outline: none;
+  border: 1px solid #e5e6e9;
+  height: 48px;
+  padding-left: 18px;
+  font-size: 12px;
+  width: 100%;
+}
+
+.form_control {
+  font-family: "Poppins", sans-serif;
+  outline: none;
+  border: 1px solid #e5e6e9;
+  padding: 14px 18px;
+  font-size: 12px;
+  resize: none;
+  width: 100%;
+}
+
+.contact_last_box input::placeholder,
+.form_control::placeholder {
+  color: #b9b9b9;
+  font-weight: 400;
+}
+
+.contact_last_box {
+  display: flex;
+  gap: 60px;
+}
+.contact_last_inform {
+  width: 350px;
+}
+
+.contact_last_inputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.contact_input_two {
+  display: flex;
+  gap: 25px;
+}
+
+.contact_last_button button {
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  padding: 18px 44px;
+  border: 1px solid var(--bs-red);
+  color: var(--bs-red);
+  background-color: white;
+  outline: none;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+
+.contact_last_button button:hover {
+  background-color: var(--bs-red);
+  color: white;
+}
+
+.contact_last_inform {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.contact_last_inform_box {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  gap: 5px;
+}
+
+.contact_last_inform_box i {
+  font-size: 28px;
+  color: #8a8a8a;
+  width: 55px;
+  display: flex;
+  justify-content: center;
+}
+
+.inform_box_text h3 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.inform_box_text p {
+  font-size: 14px;
+  color: #8a8a8a;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 970px) {
+  .contact_last_box {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .contact_input_two {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .contact_last_inform {
+    width: 100%;
+  }
+  .contact_last_inform_box {
+    white-space: unset;
+  }
+  .contact_last h2 {
+    font-size: 26px;
+  }
+  .contact_location {
+    margin-bottom: 50px;
+  }
+  .contact_last {
+    margin-bottom: 50px;
+  }
+}
+
+/* login */
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  user-select: none;
+}
+
+.login_box {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 55px;
+  box-shadow: 0px 10px 30px 0px rgba(13, 12, 13, 0.2);
+  min-width: 700px;
+}
+
+.login_box h2 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+.login_box p {
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+  color: #2c2c2c;
+  margin-bottom: 15px;
+}
+
+.login_box_inputs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 35px 0px 75px;
+}
+
+.login_box_inputs input {
+  font-family: "Poppins", sans-serif;
+  outline: none;
+  border: 1px solid #c9c9c9;
+  padding: 14px 18px;
+  font-size: 12px;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.login_box_inputs input::placeholder {
+  color: #a9a9a9;
+  font-weight: 400;
+}
+
+.login_box_inputs label {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.login_inputs_bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.login_inputs_bottom div {
+  display: flex;
+  gap: 8px;
+}
+
+.login_inputs_bottom label {
+  white-space: nowrap;
+  margin-bottom: unset;
+  cursor: pointer;
+}
+
+.login_inputs_bottom input {
+  margin-bottom: unset;
+  cursor: pointer;
+}
+
+.login_inputs_bottom a {
+  color: var(--bs-red);
+  font-size: 14px;
+}
+
+.login_bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login_bottom button {
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  padding: 18px 44px;
+  background-color: var(--bs-red);
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.login_bottom button:active {
+  background-color: rgb(233, 0, 0);
+}
+
+.login_bottom p {
+  margin-bottom: unset;
+}
+
+.login_bottom a {
+  white-space: nowrap;
+  color: var(--bs-red);
+}
+
+@media screen and (max-width: 760px) {
+  .login_box {
+    min-width: unset;
+    width: 100%;
+    margin: 0px 20px;
+  }
+  .login_box_inputs {
+    padding: 35px 0px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .login_bottom {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .login_box {
+    padding: 30px;
+  }
+}
+@media screen and (max-width: 430px) {
+  .login_inputs_bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .login_box_inputs {
+    padding: 15px 0px;
+  }
 }

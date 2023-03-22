@@ -5,12 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FE Final</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/style.css" />
     <link rel="shortcut icon" href="/img/loder.png" type="image/x-icon" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
   </head>
   <body>
     <header>
@@ -64,7 +60,7 @@
 
             <div class="nav_text">
               <ul class="nav_text_ul">
-                <li><a href="#">Home</a></li>
+                <li><a href="/html/home.html">Home</a></li>
                 <li><a href="#">Men</a></li>
                 <li><a href="#">Women</a></li>
                 <li><a href="#">Baby Collection</a></li>
@@ -74,8 +70,10 @@
                   ></a>
                   <ul class="sub_menu">
                     <i class="fa-solid fa-caret-up"></i>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Cart</a></li>
+                    <li><a href="/html/login.html">Login</a></li>
+                    <li>
+                      <a href="/html/cart.html" class="select_nav">Cart</a>
+                    </li>
                     <li>
                       <a href="#">Product Details</a>
                     </li>
@@ -95,14 +93,16 @@
                     <li><a href="#">Blog Details</a></li>
                   </ul>
                 </li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="/html/contact.html">Contact</a></li>
               </ul>
             </div>
 
             <div class="nav_right">
               <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-              <a href="#"><i class="fa-regular fa-user"></i></a>
-              <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+              <a href="/html/login.html"><i class="fa-regular fa-user"></i></a>
+              <a href="/html/cart.html" class="select_nav"
+                ><i class="fa-solid fa-cart-shopping"></i
+              ></a>
 
               <div class="nav_menu">
                 <i class="fa-solid fa-bars"></i>
@@ -116,15 +116,99 @@
         <a href="#">Shop Now</a>
       </div>
     </header>
-      <main>
-          <section class="cart">
-  
-          </section>
-      </main>
+    <main>
+      <section class="cart"></section>
+    </main>
+    <footer>
+      <div class="container">
+        <!-- Footer Top -->
+        <section class="footer_top">
+          <div class="footer_contact">
+            <div class="footer_contact_text">
+              <h3>Subscribe Newsletter</h3>
+              <p>Subscribe newsletter to get 5% on all products.</p>
+            </div>
+            <div class="email_contact_text">
+              <input type="email" placeholder="Enter your email" />
+              <button>Subscribe</button>
+            </div>
+            <div class="social_contact_text">
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-youtube"></i>
+            </div>
+          </div>
+        </section>
+
+        <!-- Footer Bottom -->
+        <section class="footer_bottom">
+          <div class="footer_bottom_box">
+            <div class="footer_bottom_img">
+              <img src="/img/logo2_footer.png.webp" alt="" />
+            </div>
+          </div>
+
+          <div class="footer_box">
+            <h4>Shop Men</h4>
+            <ul class="footer_box_ul">
+              <li><a href="#">Clothing Fashion</a></li>
+              <li><a href="#">Winter</a></li>
+              <li><a href="#">Summer</a></li>
+              <li><a href="#">Formal</a></li>
+              <li><a href="#">Casual</a></li>
+            </ul>
+          </div>
+
+          <div class="footer_box">
+            <h4>Clothing Fashion</h4>
+            <ul class="footer_box_ul">
+              <li><a href="#">Clothing Fashion</a></li>
+              <li><a href="#">Winter</a></li>
+              <li><a href="#">Summer</a></li>
+              <li><a href="#">Formal</a></li>
+              <li><a href="#">Casual</a></li>
+            </ul>
+          </div>
+
+          <div class="footer_box">
+            <h4>Baby Collection</h4>
+            <ul class="footer_box_ul">
+              <li><a href="#">Clothing Fashion</a></li>
+              <li><a href="#">Winter</a></li>
+              <li><a href="#">Summer</a></li>
+              <li><a href="#">Formal</a></li>
+              <li><a href="#">Casual</a></li>
+            </ul>
+          </div>
+
+          <div class="footer_box">
+            <h4>Quick Links</h4>
+            <ul class="footer_box_ul">
+              <li><a href="#">Track Your Order</a></li>
+              <li><a href="#">Support</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Carrier</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Footer Last -->
+        <section class="footer_last">
+          <p>
+            Copyright ©2023 All rights reserved | This template is made by
+            <span>Aykhan Mustafayev</span>
+          </p>
+        </section>
+      </div>
+    </footer>
+    <!-- topScroll button -->
+    <div class="top_scroll"><i class="fa-solid fa-chevron-up"></i></div>
     <script
       src="https://kit.fontawesome.com/da35fc8e81.js"
       crossorigin="anonymous"
     ></script>
-    <script src="/main.js"></script>
+    <script src="/js/header.js"></script>
   </body>
 </html>

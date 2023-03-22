@@ -46,7 +46,7 @@ sub_a.forEach((sub_link) => {
 
 let nav_img = document.querySelector(".nav_img");
 nav_img.addEventListener("click", () => {
-  window.location.href = "index.html";
+  window.location.href = "/html/home.html";
 });
 
 //slider
