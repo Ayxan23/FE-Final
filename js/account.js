@@ -76,7 +76,7 @@ contact_btn.addEventListener("click", () => {
     input.value = "";
     input.style.border = null;
   });
-  window.location.href = "/html/login.html";
+  window.location.href = "./login.html";
 });
 
 inputs.forEach((input) => {

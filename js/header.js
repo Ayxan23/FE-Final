@@ -44,10 +44,10 @@ sub_a.forEach((sub_link) => {
   });
 });
 
-let nav_img = document.querySelector(".nav_img");
-nav_img.addEventListener("click", () => {
-  window.location.href = "/index.html";
-});
+// let nav_img = document.querySelector(".nav_img");
+// nav_img.addEventListener("click", () => {
+//   window.location.href = "./index.html";
+// });
 
 //footer
 let footer_email = document.querySelector(".email_contact_text");

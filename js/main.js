@@ -315,13 +315,13 @@ let custTestArr = [
     text: "Everybody is different, which is why we offer styles for every body. Laborum fuga incidunt laboriosam voluptas iure, delectus dignissimos facilis neque nulla earum.",
     custName: "Petey Cruiser",
     custJob: "Designer at Colarlib",
-    img: "/img/founder-img.png.webp",
+    img: "./img/founder-img.png.webp",
   },
   {
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae totam animi, laboriosam minima tenetur deleniti optio aperiam maxime at iure esse molestias mollitia.",
     custName: "Ayxan Mustafayev",
     custJob: "Developer",
-    img: "/img/custAyxan.png",
+    img: "./img/custAyxan.png",
   },
 ];
 
