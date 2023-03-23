@@ -29,7 +29,7 @@ contact_btn.addEventListener("click", () => {
     data.forEach((obj) => {
          console.log(obj.mail);
       if (obj.email == mail.value && obj.password == pass.value) {
-        window.location.href = "/html/index.html";
+        window.location.href = "../index.html";
         logged = true;
       } else if (obj.email == mail.value) {
         pass.style.border = "2px solid var(--bs-red)";
