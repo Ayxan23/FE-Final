@@ -24,8 +24,8 @@ contact_btn.addEventListener("click", () => {
     return;
   }
 
-  if (localStorage.getItem("user_data")) {
-    let data = JSON.parse(localStorage.getItem("user_data"));
+  if (localStorage.getItem("user_data_mev")) {
+    let data = JSON.parse(localStorage.getItem("user_data_mev"));
     data.forEach((obj) => {
          console.log(obj.mail);
       if (obj.email == mail.value && obj.password == pass.value) {
@@ -51,8 +51,6 @@ contact_btn.addEventListener("click", () => {
     }
   }
 });
-//bele bir user yoxdur
-//
 
 arrInputs.forEach((input) => {
   input.addEventListener("focus", () => {

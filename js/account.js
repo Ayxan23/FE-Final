@@ -1,5 +1,4 @@
 //Sign up
-// localStorage.clear();
 let filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 let f_name = document.querySelector("#signup_name");
 let mail = document.querySelector("#signup_mail");
@@ -45,8 +44,8 @@ contact_btn.addEventListener("click", () => {
     inputKey = true;
   }
 
-  if (user_index > 1 || localStorage.getItem("user_data")) {
-    let data = JSON.parse(localStorage.getItem("user_data"));
+  if (user_index > 1 || localStorage.getItem("user_data_mev")) {
+    let data = JSON.parse(localStorage.getItem("user_data_mev"));
     data.forEach((obj) => {
       if (obj.email == mail.value) {
         mail.value = "";
@@ -67,12 +66,12 @@ contact_btn.addEventListener("click", () => {
     email: mail.value,
     password: pass.value,
   };
-  
-  if (localStorage.getItem("user_data")) {
-    resArr = JSON.parse(localStorage.getItem("user_data"));
+
+  if (localStorage.getItem("user_data_mev")) {
+    resArr = JSON.parse(localStorage.getItem("user_data_mev"));
   }
   resArr.push(obj);
-  localStorage.setItem("user_data", JSON.stringify(resArr));
+  localStorage.setItem("user_data_mev", JSON.stringify(resArr));
   inputs.forEach((input) => {
     input.value = "";
     input.style.border = null;

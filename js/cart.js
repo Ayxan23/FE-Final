@@ -4,8 +4,8 @@ let add_counter = document.querySelector(".cart_shop_count");
 
 window.addEventListener("DOMContentLoaded", () => {
   if (
-    localStorage.getItem("basket") &&
-    JSON.parse(localStorage.getItem("basket")).length > 0
+    localStorage.getItem("basket_mev") &&
+    JSON.parse(localStorage.getItem("basket_mev")).length > 0
   ) {
     cart_empty.style.display = "none";
     addCartProd();
@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 function addCartProd() {
   cart_content.innerHTML = "";
-  let basketArr = JSON.parse(localStorage.getItem("basket"));
+  let basketArr = JSON.parse(localStorage.getItem("basket_mev"));
   basketArr.forEach((prod) => {
     prod.price = parseFloat(prod.price.substring(1) * prod.count).toFixed(2);
     cart_content.innerHTML += ` 
@@ -53,50 +53,50 @@ function addCartProd() {
 
     prod_plus.addEventListener("click", () => {
       add_counter.style.opacity = "1";
-      let count = Number(localStorage.getItem("counter"));
+      let count = Number(localStorage.getItem("counter_mev"));
       add_counter.innerHTML = ++count;
-      localStorage.setItem("counter", String(count));
+      localStorage.setItem("counter_mev", String(count));
 
-      let data = JSON.parse(localStorage.getItem("basket"));
+      let data = JSON.parse(localStorage.getItem("basket_mev"));
       data.forEach((obj) => {
         if (obj.id == prod_id) {
           ++obj.count;
-          localStorage.setItem("basket", JSON.stringify(data));
+          localStorage.setItem("basket_mev", JSON.stringify(data));
           addCartProd();
         }
       });
     });
     prod_minus.addEventListener("click", () => {
-      let data = JSON.parse(localStorage.getItem("basket"));
+      let data = JSON.parse(localStorage.getItem("basket_mev"));
       data.forEach((obj) => {
         if (obj.id == prod_id) {
           if (obj.count > 1) {
             add_counter.style.opacity = "1";
-            let count = Number(localStorage.getItem("counter"));
+            let count = Number(localStorage.getItem("counter_mev"));
             add_counter.innerHTML = --count;
-            localStorage.setItem("counter", String(count));
+            localStorage.setItem("counter_mev", String(count));
 
             --obj.count;
-            localStorage.setItem("basket", JSON.stringify(data));
+            localStorage.setItem("basket_mev", JSON.stringify(data));
             addCartProd();
           }
         }
       });
     });
     prod_del.addEventListener("click", () => {
-      let data = JSON.parse(localStorage.getItem("basket"));
+      let data = JSON.parse(localStorage.getItem("basket_mev"));
       data.forEach((obj, i) => {
         if (obj.id == prod_id) {
           add_counter.style.opacity = "1";
-          let count = Number(localStorage.getItem("counter")) - obj.count;
+          let count = Number(localStorage.getItem("counter_mev")) - obj.count;
           add_counter.innerHTML = count;
-          localStorage.setItem("counter", String(count));
-          if (Number(localStorage.getItem("counter")) < 1) {
+          localStorage.setItem("counter_mev", String(count));
+          if (Number(localStorage.getItem("counter_mev")) < 1) {
             add_counter.style.opacity = "0";
           }
 
           data.splice(i, 1);
-          localStorage.setItem("basket", JSON.stringify(data));
+          localStorage.setItem("basket_mev", JSON.stringify(data));
           addCartProd();
           if (data.length == 0) {
             cart_empty.style.display = "flex";

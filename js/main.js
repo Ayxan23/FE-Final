@@ -280,12 +280,12 @@ function trendAdd() {
       localStorage.setItem("counter", String(count));
 
       let keyProd = false;
-      if (localStorage.getItem("basket")) {
-        let data = JSON.parse(localStorage.getItem("basket"));
+      if (localStorage.getItem("basket_mev")) {
+        let data = JSON.parse(localStorage.getItem("basket_mev"));
         data.forEach((obj) => {
           if (obj.id == box_id) {
             ++obj.count;
-            localStorage.setItem("basket", JSON.stringify(data));
+            localStorage.setItem("basket_mev", JSON.stringify(data));
             keyProd = true;
           }
         });
@@ -302,11 +302,11 @@ function trendAdd() {
         price: box_price,
         count: 1,
       };
-      if (localStorage.getItem("basket")) {
-        basketArr = JSON.parse(localStorage.getItem("basket"));
+      if (localStorage.getItem("basket_mev")) {
+        basketArr = JSON.parse(localStorage.getItem("basket_mev"));
       }
       basketArr.push(prod_obj);
-      localStorage.setItem("basket", JSON.stringify(basketArr));
+      localStorage.setItem("basket_mev", JSON.stringify(basketArr));
     });
   });
 }
@@ -537,12 +537,12 @@ function likeAdd() {
       localStorage.setItem("counter", String(count));
 
       let keyProd = false;
-      if (localStorage.getItem("basket")) {
-        let data = JSON.parse(localStorage.getItem("basket"));
+      if (localStorage.getItem("basket_mev")) {
+        let data = JSON.parse(localStorage.getItem("basket_mev"));
         data.forEach((obj) => {
           if (obj.id == box_id) {
             ++obj.count;
-            localStorage.setItem("basket", JSON.stringify(data));
+            localStorage.setItem("basket_mev", JSON.stringify(data));
             keyProd = true;
           }
         });
@@ -559,11 +559,11 @@ function likeAdd() {
         price: box_price,
         count: 1,
       };
-      if (localStorage.getItem("basket")) {
-        basketArr = JSON.parse(localStorage.getItem("basket"));
+      if (localStorage.getItem("basket_mev")) {
+        basketArr = JSON.parse(localStorage.getItem("basket_mev"));
       }
       basketArr.push(prod_obj);
-      localStorage.setItem("basket", JSON.stringify(basketArr));
+      localStorage.setItem("basket_mev", JSON.stringify(basketArr));
     });
   });
 }

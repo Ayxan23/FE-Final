@@ -61,10 +61,10 @@ footer_button.addEventListener("click", () => {
 //cart
 window.addEventListener("DOMContentLoaded", () => {
   if (
-    localStorage.getItem("counter") &&
-    Number(localStorage.getItem("counter")) > 0
+    localStorage.getItem("counter_mev") &&
+    Number(localStorage.getItem("counter_mev")) > 0
   ) {
-    let count = Number(localStorage.getItem("counter"));
+    let count = Number(localStorage.getItem("counter_mev"));
     add_counter.innerHTML = count;
     add_counter.style.opacity = "1";
   }
