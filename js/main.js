@@ -63,7 +63,7 @@ let slider_box_button = slider_box.querySelector("button");
 let trendArr = [
   {
     id: "1",
-    img: "/img/latest1.jpg.webp",
+    img: "./img/latest1.jpg.webp",
     title: "Cashmere Tank + Men",
     price_new: "$68.00",
     price_old: "$80.00",
@@ -71,7 +71,7 @@ let trendArr = [
   },
   {
     id: "2",
-    img: "/img/latest2.jpg.webp",
+    img: "./img/latest2.jpg.webp",
     title: "Cashmere Tank + Women",
     price_new: "$47.00",
     price_old: "$60.00",
@@ -79,7 +79,7 @@ let trendArr = [
   },
   {
     id: "3",
-    img: "/img/latest3.jpg.webp",
+    img: "./img/latest3.jpg.webp",
     title: "Cashmere Tank + Baby",
     price_new: "$39.00",
     price_old: "$50.00",
@@ -87,7 +87,7 @@ let trendArr = [
   },
   {
     id: "4",
-    img: "/img/latest4.jpg.webp",
+    img: "./img/latest4.jpg.webp",
     title: "Cashmere Tank + Men",
     price_new: "$56.00",
     price_old: "$70.00",
@@ -95,7 +95,7 @@ let trendArr = [
   },
   {
     id: "5",
-    img: "/img/latest2.jpg.webp",
+    img: "./img/latest2.jpg.webp",
     title: "Cashmere Tank + Men",
     price_new: "$23.00",
     price_old: "$40.00",
@@ -103,7 +103,7 @@ let trendArr = [
   },
   {
     id: "6",
-    img: "/img/latest3.jpg.webp",
+    img: "./img/latest3.jpg.webp",
     title: "Cashmere Tank + Women",
     price_new: "$78.00",
     price_old: "$90.00",
@@ -111,7 +111,7 @@ let trendArr = [
   },
   {
     id: "7",
-    img: "/img/latest1.jpg.webp",
+    img: "./img/latest1.jpg.webp",
     title: "Cashmere Tank + Baby",
     price_new: "$45.00",
     price_old: "$60.00",
@@ -119,7 +119,7 @@ let trendArr = [
   },
   {
     id: "8",
-    img: "/img/latest4.jpg.webp",
+    img: "./img/latest4.jpg.webp",
     title: "Cashmere Tank + Women",
     price_new: "$91.00",
     price_old: "$110.00",
@@ -127,7 +127,7 @@ let trendArr = [
   },
   {
     id: "9",
-    img: "/img/latest3.jpg.webp",
+    img: "./img/latest3.jpg.webp",
     title: "Cashmere Tank + Men",
     price_new: "$55.00",
     price_old: "$60.00",
@@ -135,7 +135,7 @@ let trendArr = [
   },
   {
     id: "10",
-    img: "/img/latest2.jpg.webp",
+    img: "./img/latest2.jpg.webp",
     title: "Cashmere Tank + Baby",
     price_new: "$72.00",
     price_old: "$80.00",
@@ -143,7 +143,7 @@ let trendArr = [
   },
   {
     id: "11",
-    img: "/img/latest1.jpg.webp",
+    img: "./img/latest1.jpg.webp",
     title: "Cashmere Tank + Women",
     price_new: "$81.00",
     price_old: "$90.00",
@@ -151,7 +151,7 @@ let trendArr = [
   },
   {
     id: "12",
-    img: "/img/latest4.jpg.webp",
+    img: "./img/latest4.jpg.webp",
     title: "Cashmere Tank + Baby",
     price_new: "$44.00",
     price_old: "$60.00",
@@ -257,8 +257,6 @@ filtr_btns.forEach((filtr_btn) => {
 });
 
 // trend add
-let add_counter = document.querySelector(".cart_shop_count");
-
 let basketArr = [];
 
 function trendAdd() {
@@ -273,11 +271,11 @@ function trendAdd() {
 
       add_counter.style.opacity = "1";
       let count = 0;
-      if (localStorage.getItem("counter")) {
-        count = Number(localStorage.getItem("counter"));
+      if (localStorage.getItem("counter_mev")) {
+        count = Number(localStorage.getItem("counter_mev"));
       }
       add_counter.innerHTML = ++count;
-      localStorage.setItem("counter", String(count));
+      localStorage.setItem("counter_mev", String(count));
 
       let keyProd = false;
       if (localStorage.getItem("basket_mev")) {
@@ -402,48 +400,48 @@ window.addEventListener("scroll", () => {
 //YouMayLike
 let likeArr = [
   {
-    id: "1",
-    img: "/img/latest5.jpg.webp",
+    id: "13",
+    img: "./img/latest5.jpg.webp",
     title: "Cashmere Tank + Bag",
     price_new: "$68.00",
     price_old: "$80.00",
     category: "Men",
   },
   {
-    id: "2",
-    img: "/img/latest6.jpg.webp",
+    id: "14",
+    img: "./img/latest6.jpg.webp",
     title: "Cashmere Tank + Bag",
     price_new: "$47.00",
     price_old: "$60.00",
     category: "Men",
   },
   {
-    id: "3",
-    img: "/img/latest7.jpg.webp",
+    id: "15",
+    img: "./img/latest7.jpg.webp",
     title: "Cashmere Tank + Bag",
     price_new: "$39.00",
     price_old: "$50.00",
     category: "Men",
   },
   {
-    id: "4",
-    img: "/img/latest8.jpg.webp",
+    id: "16",
+    img: "./img/latest8.jpg.webp",
     title: "Cashmere Tank + Bag",
     price_new: "$56.00",
     price_old: "$70.00",
     category: "Men",
   },
   {
-    id: "5",
-    img: "/img/latest5.jpg.webp",
+    id: "17",
+    img: "./img/latest5.jpg.webp",
     title: "Cashmere Tank + Bag",
     price_new: "$23.00",
     price_old: "$40.00",
     category: "Men",
   },
   {
-    id: "6",
-    img: "/img/latest6.jpg.webp",
+    id: "18",
+    img: "./img/latest6.jpg.webp",
     title: "Cashmere Tank + Bag",
     price_new: "$78.00",
     price_old: "$90.00",
@@ -479,7 +477,7 @@ like_nav_right.addEventListener("click", () => {
 function likeBoxSlide() {
   setTimeout(() => {
     like_box.forEach((box, i) => {
-      let id = trend_slideArr[i].id;
+      let id = like_slideArr[i].id;
       let img = like_slideArr[i].img;
       let title = like_slideArr[i].title;
       let price_new = like_slideArr[i].price_new;
@@ -530,11 +528,11 @@ function likeAdd() {
 
       add_counter.style.opacity = "1";
       let count = 0;
-      if (localStorage.getItem("counter")) {
-        count = Number(localStorage.getItem("counter"));
+      if (localStorage.getItem("counter_mev")) {
+        count = Number(localStorage.getItem("counter_mev"));
       }
       add_counter.innerHTML = ++count;
-      localStorage.setItem("counter", String(count));
+      localStorage.setItem("counter_mev", String(count));
 
       let keyProd = false;
       if (localStorage.getItem("basket_mev")) {

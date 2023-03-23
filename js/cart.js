@@ -1,7 +1,6 @@
 let cart_content = document.querySelector(".cart_content");
 let cart_empty = document.querySelector(".cart_empty");
-let add_counter = document.querySelector(".cart_shop_count");
-
+// localStorage.clear()
 window.addEventListener("DOMContentLoaded", () => {
   if (
     localStorage.getItem("basket_mev") &&
@@ -21,7 +20,7 @@ function addCartProd() {
         <div class="cart_product">
         <div class="cart_product_left">
           <div class="product_img">
-            <img src="${prod.img}" alt="" />
+            <img src=".${prod.img}" alt="" />
           </div>
         </div>
         <div class="prduct_mobile">

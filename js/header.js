@@ -46,7 +46,7 @@ sub_a.forEach((sub_link) => {
 
 let nav_img = document.querySelector(".nav_img");
 nav_img.addEventListener("click", () => {
-  window.location.href = "../index.html";
+  window.location.href = "/index.html";
 });
 
 //footer
@@ -59,6 +59,7 @@ footer_button.addEventListener("click", () => {
 });
 
 //cart
+let add_counter = document.querySelector(".cart_shop_count");
 window.addEventListener("DOMContentLoaded", () => {
   if (
     localStorage.getItem("counter_mev") &&
@@ -66,6 +67,7 @@ window.addEventListener("DOMContentLoaded", () => {
   ) {
     let count = Number(localStorage.getItem("counter_mev"));
     add_counter.innerHTML = count;
+    add_counter.style.opacity = "1";
     add_counter.style.opacity = "1";
   }
 });
