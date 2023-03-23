@@ -67,7 +67,10 @@ contact_btn.addEventListener("click", () => {
     email: mail.value,
     password: pass.value,
   };
-  //   console.log("added");
+  
+  if (localStorage.getItem("user_data")) {
+    resArr = JSON.parse(localStorage.getItem("user_data"));
+  }
   resArr.push(obj);
   localStorage.setItem("user_data", JSON.stringify(resArr));
   inputs.forEach((input) => {

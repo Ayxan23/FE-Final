@@ -101,7 +101,8 @@
               <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
               <a href="/html/login.html"><i class="fa-regular fa-user"></i></a>
               <a href="/html/cart.html" class="select_nav"
-                ><i class="fa-solid fa-cart-shopping"></i
+                ><i class="fa-solid fa-cart-shopping"
+                  ><div class="cart_shop_count"></div></i
               ></a>
 
               <div class="nav_menu">
@@ -111,13 +112,30 @@
           </div>
         </div>
       </section>
+    </header>
+    <main>
       <div class="discount_info">
         <p>Sale Up To 50% Biggest Discounts. Hurry! Limited Perriod Offer</p>
         <a href="#">Shop Now</a>
       </div>
-    </header>
-    <main>
-      <section class="cart"></section>
+      <section class="cart">
+        <!-- cart title -->
+        <div class="contact_title">
+          <div class="contact_title_box">
+            <h2>Cart</h2>
+            <div class="contact_title_nav">
+              <p><a href="/html/home.html">Home</a></p>
+              <div class="contact_line"></div>
+              <p><a href="/html/cart.html">Cart</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cart_content container"></div>
+        <div class="cart_empty">
+          <h2>Your Cart Is Empty</h2>
+        </div>
+      </section>
     </main>
     <footer>
       <div class="container">
@@ -129,7 +147,7 @@
               <p>Subscribe newsletter to get 5% on all products.</p>
             </div>
             <div class="email_contact_text">
-              <input type="email" placeholder="Enter your email" value=""/>
+              <input type="email" placeholder="Enter your email" value="" />
               <button>Subscribe</button>
             </div>
             <div class="social_contact_text">
@@ -210,5 +228,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="/js/header.js"></script>
+    <script src="/js/cart.js"></script>
   </body>
 </html>

@@ -57,3 +57,15 @@ let footer_button = footer_email.querySelector("button");
 footer_button.addEventListener("click", () => {
   footer_input.value = "";
 });
+
+//cart
+window.addEventListener("DOMContentLoaded", () => {
+  if (
+    localStorage.getItem("counter") &&
+    Number(localStorage.getItem("counter")) > 0
+  ) {
+    let count = Number(localStorage.getItem("counter"));
+    add_counter.innerHTML = count;
+    add_counter.style.opacity = "1";
+  }
+});

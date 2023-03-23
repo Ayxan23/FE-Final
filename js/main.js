@@ -7,10 +7,10 @@
 
 let sliderArr = [
   {
-    img: "url(./img/h1_hero1.jpg.webp)",
+    img: "url(/img/h1_hero1.jpg.webp)",
   },
   {
-    img: "url(./img/h1_hero2.jpg.webp)",
+    img: "url(/img/h1_hero2.jpg.webp)",
   },
 ];
 
@@ -62,6 +62,7 @@ let slider_box_button = slider_box.querySelector("button");
 // trend slider
 let trendArr = [
   {
+    id: "1",
     img: "/img/latest1.jpg.webp",
     title: "Cashmere Tank + Men",
     price_new: "$68.00",
@@ -69,6 +70,7 @@ let trendArr = [
     category: "Men",
   },
   {
+    id: "2",
     img: "/img/latest2.jpg.webp",
     title: "Cashmere Tank + Women",
     price_new: "$47.00",
@@ -76,6 +78,7 @@ let trendArr = [
     category: "Women",
   },
   {
+    id: "3",
     img: "/img/latest3.jpg.webp",
     title: "Cashmere Tank + Baby",
     price_new: "$39.00",
@@ -83,6 +86,7 @@ let trendArr = [
     category: "Baby",
   },
   {
+    id: "4",
     img: "/img/latest4.jpg.webp",
     title: "Cashmere Tank + Men",
     price_new: "$56.00",
@@ -90,6 +94,7 @@ let trendArr = [
     category: "Men",
   },
   {
+    id: "5",
     img: "/img/latest2.jpg.webp",
     title: "Cashmere Tank + Men",
     price_new: "$23.00",
@@ -97,6 +102,7 @@ let trendArr = [
     category: "Men",
   },
   {
+    id: "6",
     img: "/img/latest3.jpg.webp",
     title: "Cashmere Tank + Women",
     price_new: "$78.00",
@@ -104,6 +110,7 @@ let trendArr = [
     category: "Women",
   },
   {
+    id: "7",
     img: "/img/latest1.jpg.webp",
     title: "Cashmere Tank + Baby",
     price_new: "$45.00",
@@ -111,6 +118,7 @@ let trendArr = [
     category: "Baby",
   },
   {
+    id: "8",
     img: "/img/latest4.jpg.webp",
     title: "Cashmere Tank + Women",
     price_new: "$91.00",
@@ -118,6 +126,7 @@ let trendArr = [
     category: "Women",
   },
   {
+    id: "9",
     img: "/img/latest3.jpg.webp",
     title: "Cashmere Tank + Men",
     price_new: "$55.00",
@@ -125,6 +134,7 @@ let trendArr = [
     category: "Men",
   },
   {
+    id: "10",
     img: "/img/latest2.jpg.webp",
     title: "Cashmere Tank + Baby",
     price_new: "$72.00",
@@ -132,6 +142,7 @@ let trendArr = [
     category: "Baby",
   },
   {
+    id: "11",
     img: "/img/latest1.jpg.webp",
     title: "Cashmere Tank + Women",
     price_new: "$81.00",
@@ -139,6 +150,7 @@ let trendArr = [
     category: "Women",
   },
   {
+    id: "12",
     img: "/img/latest4.jpg.webp",
     title: "Cashmere Tank + Baby",
     price_new: "$44.00",
@@ -182,6 +194,7 @@ trend_nav_right.addEventListener("click", () => {
 function trendBoxSlide() {
   setTimeout(() => {
     trend_box.forEach((box, i) => {
+      let id = trend_slideArr[i].id;
       let img = trend_slideArr[i].img;
       let title = trend_slideArr[i].title;
       let price_new = trend_slideArr[i].price_new;
@@ -189,7 +202,7 @@ function trendBoxSlide() {
 
       box.innerHTML = `
     <div class="trend_box_img">
-      <img src="${img}" alt="" />
+      <img src="${img}" alt="" data-id="${id}"/>
       <div class="trend_box_buttons">
         <div class="trend_button_one trend_button">
           <i class="fa-solid fa-cart-plus"></i>
@@ -245,23 +258,58 @@ filtr_btns.forEach((filtr_btn) => {
 
 // trend add
 let add_counter = document.querySelector(".cart_shop_count");
-let add_count = 0;
+
+let basketArr = [];
 
 function trendAdd() {
   trend_box.forEach((box) => {
     let add_btn = box.querySelector(".trend_button_one");
+
     add_btn.addEventListener("click", () => {
       let box_name = box.querySelector("h3").innerHTML;
       let box_price = box.querySelector("p").innerHTML;
-      console.log(box_name, box_price); //
+      let box_image = box.querySelector("img").getAttribute("src");
+      let box_id = box.querySelector("img").getAttribute("data-id");
 
       add_counter.style.opacity = "1";
-      add_count++;
-      add_counter.innerHTML = add_count;
+      let count = 0;
+      if (localStorage.getItem("counter")) {
+        count = Number(localStorage.getItem("counter"));
+      }
+      add_counter.innerHTML = ++count;
+      localStorage.setItem("counter", String(count));
+
+      let keyProd = false;
+      if (localStorage.getItem("basket")) {
+        let data = JSON.parse(localStorage.getItem("basket"));
+        data.forEach((obj) => {
+          if (obj.id == box_id) {
+            ++obj.count;
+            localStorage.setItem("basket", JSON.stringify(data));
+            keyProd = true;
+          }
+        });
+      }
+
+      if (keyProd) {
+        return;
+      }
+
+      let prod_obj = {
+        id: box_id,
+        img: box_image,
+        prodName: box_name,
+        price: box_price,
+        count: 1,
+      };
+      if (localStorage.getItem("basket")) {
+        basketArr = JSON.parse(localStorage.getItem("basket"));
+      }
+      basketArr.push(prod_obj);
+      localStorage.setItem("basket", JSON.stringify(basketArr));
     });
   });
 }
-//to be continued...
 
 // customer testimonial
 let custTestArr = [
@@ -354,6 +402,7 @@ window.addEventListener("scroll", () => {
 //YouMayLike
 let likeArr = [
   {
+    id: "1",
     img: "/img/latest5.jpg.webp",
     title: "Cashmere Tank + Bag",
     price_new: "$68.00",
@@ -361,6 +410,7 @@ let likeArr = [
     category: "Men",
   },
   {
+    id: "2",
     img: "/img/latest6.jpg.webp",
     title: "Cashmere Tank + Bag",
     price_new: "$47.00",
@@ -368,6 +418,7 @@ let likeArr = [
     category: "Men",
   },
   {
+    id: "3",
     img: "/img/latest7.jpg.webp",
     title: "Cashmere Tank + Bag",
     price_new: "$39.00",
@@ -375,6 +426,7 @@ let likeArr = [
     category: "Men",
   },
   {
+    id: "4",
     img: "/img/latest8.jpg.webp",
     title: "Cashmere Tank + Bag",
     price_new: "$56.00",
@@ -382,6 +434,7 @@ let likeArr = [
     category: "Men",
   },
   {
+    id: "5",
     img: "/img/latest5.jpg.webp",
     title: "Cashmere Tank + Bag",
     price_new: "$23.00",
@@ -389,6 +442,7 @@ let likeArr = [
     category: "Men",
   },
   {
+    id: "6",
     img: "/img/latest6.jpg.webp",
     title: "Cashmere Tank + Bag",
     price_new: "$78.00",
@@ -425,6 +479,7 @@ like_nav_right.addEventListener("click", () => {
 function likeBoxSlide() {
   setTimeout(() => {
     like_box.forEach((box, i) => {
+      let id = trend_slideArr[i].id;
       let img = like_slideArr[i].img;
       let title = like_slideArr[i].title;
       let price_new = like_slideArr[i].price_new;
@@ -432,7 +487,7 @@ function likeBoxSlide() {
 
       box.innerHTML = `
     <div class="like_box_img">
-      <img src="${img}" alt="" />
+      <img src="${img}" alt="" data-id="${id}"/>
       <div class="like_box_buttons">
         <div class="trend_button_one like_button">
           <i class="fa-solid fa-cart-plus"></i>
@@ -466,14 +521,49 @@ function likeBoxSlide() {
 function likeAdd() {
   like_box.forEach((box) => {
     let add_btn = box.querySelector(".trend_button_one");
+
     add_btn.addEventListener("click", () => {
       let box_name = box.querySelector("h3").innerHTML;
       let box_price = box.querySelector("p").innerHTML;
-      console.log(box_name, box_price); //
+      let box_image = box.querySelector("img").getAttribute("src");
+      let box_id = box.querySelector("img").getAttribute("data-id");
 
       add_counter.style.opacity = "1";
-      add_count++;
-      add_counter.innerHTML = add_count;
+      let count = 0;
+      if (localStorage.getItem("counter")) {
+        count = Number(localStorage.getItem("counter"));
+      }
+      add_counter.innerHTML = ++count;
+      localStorage.setItem("counter", String(count));
+
+      let keyProd = false;
+      if (localStorage.getItem("basket")) {
+        let data = JSON.parse(localStorage.getItem("basket"));
+        data.forEach((obj) => {
+          if (obj.id == box_id) {
+            ++obj.count;
+            localStorage.setItem("basket", JSON.stringify(data));
+            keyProd = true;
+          }
+        });
+      }
+
+      if (keyProd) {
+        return;
+      }
+
+      let prod_obj = {
+        id: box_id,
+        img: box_image,
+        prodName: box_name,
+        price: box_price,
+        count: 1,
+      };
+      if (localStorage.getItem("basket")) {
+        basketArr = JSON.parse(localStorage.getItem("basket"));
+      }
+      basketArr.push(prod_obj);
+      localStorage.setItem("basket", JSON.stringify(basketArr));
     });
   });
 }
