@@ -7,10 +7,10 @@
 
 let sliderArr = [
   {
-    img: "url(/img/h1_hero1.jpg.webp)",
+    img: "url(./img/h1_hero1.jpg.webp)",
   },
   {
-    img: "url(/img/h1_hero2.jpg.webp)",
+    img: "url(./img/h1_hero2.jpg.webp)",
   },
 ];
 
