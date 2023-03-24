@@ -1792,3 +1792,28 @@ footer {
   height: 400px;
   margin-bottom: 50px;
 }
+
+/* total price */
+.cart_total_box {
+  display: none;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: -15px;
+  margin-bottom: 40px;
+}
+
+.total_price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.total_price h3,
+.total_price p {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--bs-dark);
+}

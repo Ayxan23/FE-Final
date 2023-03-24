@@ -1,21 +1,27 @@
 let cart_content = document.querySelector(".cart_content");
 let cart_empty = document.querySelector(".cart_empty");
-// localStorage.clear()
+let cart_total = document.querySelector(".cart_total_box");
+
 window.addEventListener("DOMContentLoaded", () => {
   if (
     localStorage.getItem("basket_mev") &&
     JSON.parse(localStorage.getItem("basket_mev")).length > 0
   ) {
     cart_empty.style.display = "none";
+    cart_total.style.display = "flex";
     addCartProd();
   }
 });
+let total_price = document.querySelector(".total_price_p");
 
 function addCartProd() {
   cart_content.innerHTML = "";
+  let totalRes = 0;
   let basketArr = JSON.parse(localStorage.getItem("basket_mev"));
   basketArr.forEach((prod) => {
     prod.price = parseFloat(prod.price.substring(1) * prod.count).toFixed(2);
+    totalRes += Number(prod.price);
+    total_price.innerHTML = `$${totalRes}`;
     cart_content.innerHTML += ` 
         <div class="cart_product">
         <div class="cart_product_left">
@@ -99,6 +105,7 @@ function addCartProd() {
           addCartProd();
           if (data.length == 0) {
             cart_empty.style.display = "flex";
+            cart_total.style.display = "none";
           }
         }
       });
