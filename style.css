@@ -1755,8 +1755,9 @@ footer {
   }
   .product_price {
     position: absolute;
-    right: 1px;
+    right: -8px;
     top: 77%;
+    width: unset;
     transform: translate(-50%, -50%);
   }
   .product_name {
